@@ -70,7 +70,7 @@ pyarrow==10.0.1
 #setuptools==44.1.0  
 #wheel == 0.41.2
 #pycallgraph==1.0.1
-snakeviz 2.2.0
+snakeviz == 2.2.0
 pydantic==1.10.12
 pydantic_core==2.4.0
 pydeck==0.8.0
