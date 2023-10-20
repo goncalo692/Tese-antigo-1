@@ -27,7 +27,7 @@ from collections import Counter
 #     SETUP_CONFIG_FORM = True
 #     FILE_NAME = "data_compal.csv"
 
-st.set_page_config(page_title="Streamlit", page_icon="📊", layout="wide")
+
 
 class Device:
     def __init__(self, name):
@@ -926,19 +926,20 @@ def process_file():
     return devices_list
 
 def setup():
+    st.set_page_config(page_title="Setup", page_icon=":gear:", layout="wide")
     add_logo("images/IST-1 - 01.png")
     st.write("# Setup") 
     
     st.markdown('<style>#vg-tooltip-element{z-index: 1000051}</style>', unsafe_allow_html=True)
     
-    show_pages(
-    [
-        Page("setup.py", "Setup", ":gear:"),
-        Page("pages/1_Visualization.py", "Visualization", ":bar_chart:"),
-        Page("pages/2_Debug.py", "Debug", "ℹ️"),
-        #Page("pages/3_Experiments.py", "Experiments", "🧑‍🔬️"),
-    ]
-)
+    # show_pages(
+    # [
+    #     Page("setup.py", "Setup", ":gear:"),
+    #     Page("pages/1_Visualization.py", "Visualization", ":bar_chart:"),
+    #     Page("pages/2_Debug.py", "Debug", "ℹ️"),
+    #     #Page("pages/3_Experiments.py", "Experiments", "🧑‍🔬️"),
+    # ]
+    # )
     
     
     if 'setup_completed' not in st.session_state:

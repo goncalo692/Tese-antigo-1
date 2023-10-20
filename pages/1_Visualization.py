@@ -89,6 +89,8 @@ class Device:
         time = self.plot_variables['Time']['Column']
         return self.data[time].max() - self.data[time].min()
 
+
+
 @st.cache_data
 def plot_time_series_help(df, plot_variables):
     
@@ -946,7 +948,7 @@ def the_form(df1, settings):
     return df1
     
 def visualization():
-    #st.set_page_config(page_title="Streamlit", page_icon="📊", layout="wide")
+    st.set_page_config(page_title="Visualization", page_icon="📊", layout="wide")
     start_time = tm.time()
     start_time_all = tm.time()
     add_logo("images/IST-1 - 01.png")
