@@ -932,14 +932,14 @@ def setup():
     
     st.markdown('<style>#vg-tooltip-element{z-index: 1000051}</style>', unsafe_allow_html=True)
     
-    # show_pages(
-    # [
-    #     Page("setup.py", "Setup", ":gear:"),
-    #     Page("pages/1_Visualization.py", "Visualization", ":bar_chart:"),
-    #     Page("pages/2_Debug.py", "Debug", "ℹ️"),
-    #     #Page("pages/3_Experiments.py", "Experiments", "🧑‍🔬️"),
-    # ]
-    # )
+    show_pages(
+    [
+        Page("Setup.py", "Setup", ":gear:"),
+        Page("pages/1_Visualization.py", "Visualization", ":bar_chart:"),
+        Page("pages/2_Debug.py", "Debug", "ℹ️"),
+        #Page("pages/3_Experiments.py", "Experiments", "🧑‍🔬️"),
+    ]
+    )
     
     
     if 'setup_completed' not in st.session_state:

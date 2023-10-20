@@ -8,8 +8,8 @@ import plotly.graph_objects as go
 import time as tm
 from streamlit_extras.switch_page_button import switch_page
 from streamlit_extras.app_logo import add_logo
-from pycallgraph import PyCallGraph
-from pycallgraph.output import GraphvizOutput
+# from pycallgraph import PyCallGraph
+# from pycallgraph.output import GraphvizOutput
 from streamlit_extras.mandatory_date_range import date_range_picker
 import os
 import pickle
@@ -23,6 +23,7 @@ from streamlit_extras.dataframe_explorer import dataframe_explorer
 #from streamlit_profiler import Profiler
 import cProfile
 from pyinstrument import Profiler
+
 from pandas.api.types import (
     is_categorical_dtype,
     is_datetime64_any_dtype,
