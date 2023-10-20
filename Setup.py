@@ -173,8 +173,8 @@ def resample_dataframe(df, frequency_unit, frequency_value, resampling_method, d
         for var_type, var in device_settings["Categorical"].items():
             categorical = var["column"]
             df[categorical] = df[categorical].astype('category')
-            #agg_dict[categorical] = fast_mode
-            agg_dict[categorical] = 'first'
+            agg_dict[categorical] = fast_mode
+            #agg_dict[categorical] = 'first'
             #agg_dict[categorical] = mode_function
     
     if "Numerical" in device_settings:
@@ -690,16 +690,30 @@ def upload_file():
     error = False
     
     with st.sidebar:
-        if len(sys.argv) >= 2:
-            if sys.argv[1] == "pedra":
-                index = 0
-            elif sys.argv[1] == "compal":
-                index = 1
+        if st.experimental_get_query_params() != {}:
+            params = st.experimental_get_query_params()
+            if "dataset" in params:
+                if params["dataset"][0] == "pedreira":
+                    index = 0
+                elif params["dataset"][0] == "compal":
+                    index = 1
             else:
                 index = 2
+        
+        elif len(sys.argv) >= 2:
+            if sys.argv[1] == "pedra":
+                index = 0
+                st.experimental_set_query_params(dataset=["pedreira"])
+            elif sys.argv[1] == "compal":
+                index = 1
+                st.experimental_set_query_params(dataset=["compal"])
+            else:
+                index = 2
+                st.experimental_set_query_params(dataset=["upload"])
+         
         else:
             index = 2
-            
+            st.experimental_set_query_params(dataset="upload")   
             
         upload_mode = st.radio("Choose Dataset", ("Example Pedreira", "Example Compal", "Upload your data"), index=index, key='upload_file_radio')
     
