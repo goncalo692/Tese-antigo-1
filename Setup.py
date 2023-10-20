@@ -6,8 +6,8 @@ import datetime
 import numpy as np
 from streamlit_extras.app_logo import add_logo
 import matplotlib.pyplot as plt
-from pycallgraph import PyCallGraph
-from pycallgraph.output import GraphvizOutput
+#from pycallgraph import PyCallGraph
+#from pycallgraph.output import GraphvizOutput
 import pickle
 from pandas.api.types import is_numeric_dtype, is_datetime64_any_dtype
 from scipy.stats import mode
