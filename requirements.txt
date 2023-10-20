@@ -67,7 +67,7 @@ portpicker==1.5.2
 protobuf==3.20.3
 psrecord==1.2
 pyarrow==10.0.1
-setuptools==57.5.0
+#setuptools==57.5.0
 pycallgraph==1.0.1
 pydantic==1.10.12
 pydantic_core==2.4.0
