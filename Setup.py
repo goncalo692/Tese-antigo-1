@@ -173,8 +173,8 @@ def resample_dataframe(df, frequency_unit, frequency_value, resampling_method, d
         for var_type, var in device_settings["Categorical"].items():
             categorical = var["column"]
             df[categorical] = df[categorical].astype('category')
-            agg_dict[categorical] = fast_mode
-            #agg_dict[categorical] = 'first'
+            #agg_dict[categorical] = fast_mode
+            agg_dict[categorical] = 'first'
             #agg_dict[categorical] = mode_function
     
     if "Numerical" in device_settings:
