@@ -700,23 +700,29 @@ def upload_file():
             else:
                 index = 2
         
-        elif len(sys.argv) >= 2:
+        if len(sys.argv) >= 2:
             if sys.argv[1] == "pedra":
                 index = 0
                 st.experimental_set_query_params(dataset=["pedreira"])
             elif sys.argv[1] == "compal":
                 index = 1
-                st.experimental_set_query_params(dataset=["compal"])
             else:
                 index = 2
-                st.experimental_set_query_params(dataset=["upload"])
          
         else:
-            index = 2
-            st.experimental_set_query_params(dataset="upload")   
+            index = 2  
             
         upload_mode = st.radio("Choose Dataset", ("Example Pedreira", "Example Compal", "Upload your data"), index=index, key='upload_file_radio')
     
+    if upload_mode == "Upload your data":
+        st.experimental_set_query_params(dataset=["upload"])
+    
+    elif upload_mode == "Example Pedreira":
+        st.experimental_set_query_params(dataset=["pedreira"])
+        
+    elif upload_mode == "Example Compal":
+        st.experimental_set_query_params(dataset=["compal"])
+
 
     if upload_mode == "Upload your data":
         list_files = st.file_uploader("Upload your data", 
