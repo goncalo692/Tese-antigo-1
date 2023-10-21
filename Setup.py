@@ -688,6 +688,7 @@ def upload_file():
     st.session_state['SETUP_CONFIG_FORM'] = False
     st.session_state['FILE_NAME'] = ""
     error = False
+    index = 2
     
     with st.sidebar:
         if st.experimental_get_query_params() != {}:
@@ -697,8 +698,6 @@ def upload_file():
                     index = 0
                 elif params["dataset"][0] == "compal":
                     index = 1
-            else:
-                index = 2
         
         if len(sys.argv) >= 2:
             if sys.argv[1] == "pedra":
@@ -706,11 +705,7 @@ def upload_file():
                 st.experimental_set_query_params(dataset=["pedreira"])
             elif sys.argv[1] == "compal":
                 index = 1
-            else:
-                index = 2
-         
-        else:
-            index = 2  
+
             
         upload_mode = st.radio("Choose Dataset", ("Example Pedreira", "Example Compal", "Upload your data"), index=index, key='upload_file_radio')
     
