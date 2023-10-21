@@ -1001,9 +1001,9 @@ def visualization():
     end_time_all = tm.time()
     execution_time['Overall'] = end_time_all-start_time_all
     
-    st.subheader("Execution time (in miliseconds)")
-    for execution in execution_time:
-        st.write(execution, ":", execution_time[execution]*1000)         
+    # st.subheader("Execution time (in miliseconds)")
+    # for execution in execution_time:
+    #     st.write(execution, ":", execution_time[execution]*1000)         
 
 
     
