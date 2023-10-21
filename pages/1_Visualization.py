@@ -969,7 +969,7 @@ def visualization():
     
     start_time = tm.time()
     plots = st.multiselect("Visualization mode:", ["Time Series", "Shift Analysis", "Temporal Analysis", "Interruption Analysis"], 
-                               default=[], key=f"plots_{device['name']}")
+                               default=["Time Series"], key=f"plots_{device['name']}")
     
     filter_data = st.toggle("Filter by value", key="filter_data", value=False)    
     if filter_data==True:
